@@ -1,5 +1,5 @@
 import { Box, Button, Container, Image, SimpleGrid, Text } from '@chakra-ui/react'
-import { collection, deleteDoc, doc, onSnapshot, orderBy, query, where } from 'firebase/firestore'
+import { collection, deleteDoc, doc, DocumentData, onSnapshot, orderBy, query, where } from 'firebase/firestore'
 import { useContext, useEffect, useState } from 'react'
 import { Navbar } from '../components/Navbar'
 import { Post } from '../components/Post'
@@ -12,7 +12,7 @@ import { UserInfo } from './UserInfo'
 export default function Profile() {
 const {currentUser}=useContext<AuthContextI>(AuthContext);
 const[posts,setPosts]=useState<PostI[]>([])
-const[user,setUser]=useState<UserI>()
+const[user,setUser]=useState<UserI|DocumentData|any>()
 
 
 

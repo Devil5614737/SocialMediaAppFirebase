@@ -1,9 +1,9 @@
 import { Box, Image, Text } from '@chakra-ui/react'
-import React from 'react'
+
 
 interface UserInfoI{
-    username:string,
-    pic:string,
+    username?:string,
+    pic?:string,
     posts:number,
     friends:number
 }

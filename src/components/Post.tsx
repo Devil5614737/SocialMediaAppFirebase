@@ -3,7 +3,7 @@ import { CommentsI, LikesI } from '../interfaces/PostContextI'
 
 
 interface PostI{
-  id:string,
+  id?:string,
   image:string,
   comments:CommentsI[],
   handleDelete:(id:string)=>void,
@@ -15,7 +15,7 @@ export const Post = ({image,comments,handleDelete,id,likes}:PostI) => {
     <Box marginBottom={2}  height='fit-content' borderWidth="1px" borderRadius="lg"
     padding={5}
     >
-      <Button onClick={()=>handleDelete(id)} marginBottom={2} float='right'>Delete</Button>
+      <Button onClick={()=>handleDelete(id as string)} marginBottom={2} float='right'>Delete</Button>
       <Image height={300} borderRadius={'xl'} objectFit={'cover'} width={"100%"} src={image}/>
       <Box display={'flex'} alignItems='center' gap={4} marginTop={3}>
           <Text  fontSize={16}>{likes?.length} Likes</Text>
