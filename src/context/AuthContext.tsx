@@ -1,6 +1,5 @@
 import { onAuthStateChanged } from "firebase/auth";
 import { collection, getDoc, getDocs, onSnapshot, query, where } from "firebase/firestore";
-import { Query } from "mongoose";
 import { createContext, ReactNode, useEffect, useState } from "react";
 import { AuthContextI, CurrentUser, dataI, UserI } from "../interfaces/AuthContextI";
 import { auth, db } from "../lib/firebase";
